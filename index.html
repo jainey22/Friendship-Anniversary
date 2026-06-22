@@ -403,7 +403,11 @@ font-style:italic;
 }
 
 .envelope{
+.opening{
 
+animation:openEnvelope 1s forwards;
+
+}
 width:220px;
 height:140px;
 
@@ -453,6 +457,24 @@ transform:
 translate(-50%,-50%);
 
 font-size:60px;
+
+}  
+
+@keyframes openEnvelope{
+
+0%{
+transform:scale(1);
+opacity:1;
+}
+
+50%{
+transform:scale(1.15) rotate(5deg);
+}
+
+100%{
+transform:scale(0);
+opacity:0;
+}
 
 }  
 
@@ -862,10 +884,8 @@ A message written from the heart.
 
 <div
 class="envelope"
-onclick="showLetter()">
-
+onclick="openEnvelope()">
 </div>
-
 </div>
   
 <div id="letterSection">
@@ -1054,6 +1074,21 @@ envelope.style.display="block";
 envelope.scrollIntoView({
 behavior:"smooth"
 });
+
+}
+
+function openEnvelope(){
+
+let envelope =
+document.querySelector(".envelope");
+
+envelope.classList.add("opening");
+
+setTimeout(()=>{
+
+showLetter();
+
+},1000);
 
 }
   
