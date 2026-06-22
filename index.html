@@ -631,101 +631,33 @@ one friendship that will always stay special."
 </div>
 
 <div id="timelineSection">
-
-<div id="yearButtons">
-
-<button
-id="btn2022"
-class="yearBtn"
-onclick="showYear('year2022')">
-📍 2022
-</button>
-
-<button
-id="next2023"
-class="journeyBtn"
-onclick="unlockYear('btn2023','year2023','next2024')">
-
-➡ Next Year
-
-</button>
-  
-<button
-id="btn2023"
-class="yearBtn locked"
-onclick="showYear('year2023')">
-🔒 2023
-</button>
-
-<button
-id="next2024"
-class="journeyBtn"
-style="display:none;"
-onclick="unlockYear('btn2024','year2024','next2025')">
-
-➡ Next Year
-
-</button>
-  
-<button
-id="btn2024"
-class="yearBtn locked"
-onclick="showYear('year2024')">
-🔒 2024
-</button>
-
-<button
-id="next2025"
-class="journeyBtn"
-style="display:none;"
-onclick="unlockYear('btn2025','year2025','next2026')">
-
-➡ Next Year
-
-</button>
-  
-<button
-id="btn2025"
-class="yearBtn locked"
-onclick="showYear('year2025')">
-🔒 2025
-</button>
-
-<button
-id="next2026"
-class="journeyBtn"
-style="display:none;"
-onclick="unlockYear('btn2026','year2026')">
-
-➡ Next Year
-
-</button>
-  
-<button
-id="btn2026"
-class="yearBtn locked"
-onclick="showYear('year2026')">
-🔒 2026
-</button>
-
-</div>  
   
 <div class="timelineCard yearContent"
 id="year2022"
 style="display:none;">
 
 <h2>📍 2022</h2>
+
 <img src="2022_1.jpeg" class="timelineImg">
+
+<p>
+Yaha first memory likho...
+</p>
 
 <img src="2022_2.jpeg" class="timelineImg">
 
 <p>
-The beginning of something beautiful ❤️
-<br><br>
-A friendship that started with simple conversations
-and slowly became one of the most precious parts
-of life.
+Yaha second memory likho...
 </p>
+
+<button
+class="journeyBtn"
+onclick="showYear('year2023')">
+
+➡ Next Year
+
+</button>
+
 </div>
 
 <div class="timelineCard yearContent"
@@ -734,6 +666,10 @@ style="display:none;">
 <h2>📍 2023</h2>
 <img src="2022_1.jpeg" class="timelineImg">
 
+<p>
+Yaha second memory likho...
+</p>  
+  
 <img src="2022_2.jpeg" class="timelineImg">
 
 <p>
@@ -741,6 +677,14 @@ More talks, more laughter, more memories ✨
 <br><br>
 Every day brought us closer and made our bond stronger.
 </p>
+<button
+class="journeyBtn"
+onclick="showYear('year2024')">
+
+➡ Next Year
+
+</button>
+  
 </div>
 
 <div class="timelineCard yearContent"
@@ -749,6 +693,10 @@ style="display:none;">
 <h2>📍 2024</h2>  
 <img src="2022_1.jpeg" class="timelineImg">
 
+<p>
+Yaha second memory likho...
+</p>
+  
 <img src="2022_2.jpeg" class="timelineImg">
 
 <p>
@@ -757,6 +705,14 @@ A year filled with trust and understanding 💕
 The friendship continued to grow through every
 happy and difficult moment.
 </p>
+<button
+class="journeyBtn"
+onclick="showYear('year2025')">
+
+➡ Next Year
+
+</button>
+  
 </div>
 
 <div class="timelineCard yearContent"
@@ -765,6 +721,10 @@ style="display:none;">
 <h2>📍 2025</h2>  
 <img src="2022_1.jpeg" class="timelineImg">
 
+<p>
+Yaha second memory likho...
+</p>
+  
 <img src="2022_2.jpeg" class="timelineImg">
 
 <p>
@@ -773,6 +733,14 @@ Countless laughs and unforgettable memories 🌙
 A year that added even more beautiful chapters
 to our story.
 </p>
+<button
+class="journeyBtn"
+onclick="showYear('year2026')">
+
+➡ Next Year
+
+</button>
+  
 </div>
 
 <div class="timelineCard yearContent"
@@ -781,6 +749,10 @@ style="display:none;">
 <h2>📍 2026</h2>  
 <img src="2022_1.jpeg" class="timelineImg">
 
+<p>
+Yaha second memory likho...
+</p>
+  
 <img src="2022_2.jpeg" class="timelineImg">
 
 <p>
@@ -995,9 +967,7 @@ document.getElementById("timelineSection");
 
 timeline.style.display="block";
 
-timeline.scrollIntoView({
-behavior:"smooth"
-});
+showYear("year2022");
 
 }
 
