@@ -380,7 +380,14 @@ transition:.3s;
 transform:scale(1.08);
 
 }
+.locked{
+
+opacity:.4;
+
+pointer-events:none;
+
 }
+  
 .heroQuote{
 
 margin-top:15px;
@@ -627,24 +634,71 @@ one friendship that will always stay special."
 
 <div id="yearButtons">
 
-<button class="yearBtn" onclick="showYear('year2022')">
+<button
+id="btn2022"
+class="yearBtn"
+onclick="showYear('year2022')">
 📍 2022
 </button>
 
-<button class="yearBtn" onclick="showYear('year2023')">
-📍 2023
+<button
+class="journeyBtn"
+onclick="unlockYear('btn2023','year2023')">
+
+➡ Next Year
+
+</button>
+  
+<button
+id="btn2023"
+class="yearBtn locked"
+onclick="showYear('year2023')">
+🔒 2023
 </button>
 
-<button class="yearBtn" onclick="showYear('year2024')">
-📍 2024
+<button
+class="journeyBtn"
+onclick="unlockYear('btn2024','year2024')">
+
+➡ Next Year
+
+</button>
+  
+<button
+id="btn2024"
+class="yearBtn locked"
+onclick="showYear('year2024')">
+🔒 2024
 </button>
 
-<button class="yearBtn" onclick="showYear('year2025')">
-📍 2025
+<button
+class="journeyBtn"
+onclick="unlockYear('btn2025','year2025')">
+
+➡ Next Year
+
+</button>
+  
+<button
+id="btn2025"
+class="yearBtn locked"
+onclick="showYear('year2025')">
+🔒 2025
 </button>
 
-<button class="yearBtn" onclick="showYear('year2026')">
-📍 2026
+<button
+class="journeyBtn"
+onclick="unlockYear('btn2026','year2026')">
+
+➡ Next Year
+
+</button>
+  
+<button
+id="btn2026"
+class="yearBtn locked"
+onclick="showYear('year2026')">
+🔒 2026
 </button>
 
 </div>  
@@ -867,7 +921,7 @@ alert("Last chance 😅 ");
 }
 
 else{
-alert("Fine... you're coming with me anyway 💕 ");
+alert("Fine... you're coming with me anyway 💕 ");
 startJourney();
 }
 
@@ -1045,6 +1099,20 @@ behavior:"smooth"
 });
 
 }  
+
+function unlockYear(buttonId,yearId){
+
+let btn =
+document.getElementById(buttonId);
+
+btn.classList.remove("locked");
+
+btn.innerHTML =
+"📍 " + buttonId.replace("btn","");
+
+showYear(yearId);
+
+}
   
 </script>
 
