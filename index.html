@@ -325,6 +325,16 @@ transform:scale(1.08);
 
 }
 
+#envelopeSection{
+
+display:none;
+
+margin-top:50px;
+
+padding-bottom:50px;
+
+}
+  
 #yearButtons{
 
 margin-top:30px;
@@ -384,6 +394,34 @@ line-height:1.8;
 font-style:italic;
 
 }
+
+.envelope{
+
+font-size:120px;
+
+cursor:pointer;
+
+margin-top:40px;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}  
 #timelineSection{
 
 display:none;
@@ -413,6 +451,16 @@ margin-top:50px;
 padding-bottom:100px;
 
 }
+
+#specialMessageSection{
+
+display:none;
+
+margin-top:50px;
+
+padding-bottom:50px;
+
+}  
 
 .timelineCard{
 
@@ -680,14 +728,57 @@ Four amazing years completed ❤️
 And this journey still feels as special as it did
 on day one.
 </p>
-<button class="journeyBtn" onclick="showLetter()">
-💌 Open A Letter
+<button class="journeyBtn" onclick="showSpecialMessage()">
+💌 Special Message
+</button>
+
+</div>
+<div id="specialMessageSection">
+
+<h1>❤️ A Special Message ❤️</h1>
+
+<div class="timelineCard">
+
+<p>
+
+Before moving forward...
+
+<br><br>
+
+There is something special waiting for you.
+
+<br><br>
+
+A message written from the heart.
+
+</p>
+
+<button class="journeyBtn" onclick="showEnvelope()">
+
+✨ Show Message ✨
+
 </button>
 
 </div>
 
 </div>
+  
+</div>
 
+<div id="envelopeSection">
+
+<h1>💌 Click The Envelope 💌</h1>
+
+<div
+class="envelope"
+onclick="showLetter()">
+
+✉️
+
+</div>
+
+</div>
+  
 <div id="letterSection">
 
 <h1>💌 A Letter For Mohini</h1>
@@ -849,6 +940,36 @@ behavior:"smooth"
 
 }
 
+function showSpecialMessage(){
+
+let section =
+document.getElementById(
+"specialMessageSection"
+);
+
+section.style.display="block";
+
+section.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function showEnvelope(){
+
+let envelope =
+document.getElementById(
+"envelopeSection"
+);
+
+envelope.style.display="block";
+
+envelope.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+  
 function showLetter(){
 
 let letter =
