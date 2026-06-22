@@ -404,15 +404,57 @@ font-style:italic;
 
 .envelope{
 
-font-size:120px;
+width:220px;
+height:140px;
+
+margin:50px auto;
+
+position:relative;
 
 cursor:pointer;
 
-margin-top:40px;
-
-animation:pulse 2s infinite;
+animation:floatEnvelope 3s ease-in-out infinite;
 
 }
+
+.envelope::before{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+height:140px;
+
+background:linear-gradient(
+135deg,
+#ffb6d9,
+#ec4899
+);
+
+border-radius:12px;
+
+box-shadow:
+0 0 25px rgba(236,72,153,.5),
+0 0 60px rgba(236,72,153,.3);
+
+}
+
+.envelope::after{
+
+content:"💌";
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+font-size:60px;
+
+}  
 
 @keyframes pulse{
 
@@ -428,7 +470,23 @@ transform:scale(1.08);
 transform:scale(1);
 }
 
-}  
+}
+@keyframes floatEnvelope{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+  
 #timelineSection{
 
 display:none;
@@ -805,8 +863,6 @@ A message written from the heart.
 <div
 class="envelope"
 onclick="showLetter()">
-
-✉️
 
 </div>
 
