@@ -642,8 +642,9 @@ onclick="showYear('year2022')">
 </button>
 
 <button
+id="next2023"
 class="journeyBtn"
-onclick="unlockYear('btn2023','year2023')">
+onclick="unlockYear('btn2023','year2023','next2024')">
 
 ➡ Next Year
 
@@ -657,8 +658,10 @@ onclick="showYear('year2023')">
 </button>
 
 <button
+id="next2024"
 class="journeyBtn"
-onclick="unlockYear('btn2024','year2024')">
+style="display:none;"
+onclick="unlockYear('btn2024','year2024','next2025')">
 
 ➡ Next Year
 
@@ -672,8 +675,10 @@ onclick="showYear('year2024')">
 </button>
 
 <button
+id="next2025"
 class="journeyBtn"
-onclick="unlockYear('btn2025','year2025')">
+style="display:none;"
+onclick="unlockYear('btn2025','year2025','next2026')">
 
 ➡ Next Year
 
@@ -687,7 +692,9 @@ onclick="showYear('year2025')">
 </button>
 
 <button
+id="next2026"
 class="journeyBtn"
+style="display:none;"
 onclick="unlockYear('btn2026','year2026')">
 
 ➡ Next Year
@@ -1100,7 +1107,11 @@ behavior:"smooth"
 
 }  
 
-function unlockYear(buttonId,yearId){
+function unlockYear(
+buttonId,
+yearId,
+nextButtonId
+){
 
 let btn =
 document.getElementById(buttonId);
@@ -1111,6 +1122,14 @@ btn.innerHTML =
 "📍 " + buttonId.replace("btn","");
 
 showYear(yearId);
+
+if(nextButtonId){
+
+document
+.getElementById(nextButtonId)
+.style.display="inline-block";
+
+}
 
 }
   
