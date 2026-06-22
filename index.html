@@ -322,6 +322,52 @@ transition:.3s;
 
 .journeyBtn:hover{
 
+  #yearButtons{
+
+margin-top:30px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.yearBtn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(
+45deg,
+#8b5cf6,
+#ec4899
+);
+
+color:white;
+
+cursor:pointer;
+
+font-size:1rem;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.yearBtn:hover{
+
+transform:scale(1.08);
+
+}
+  
 transform:scale(1.08);
 
 }
@@ -531,7 +577,34 @@ one friendship that will always stay special."
 
 <div id="timelineSection">
 
-<div class="timelineCard">
+<div id="yearButtons">
+
+<button class="yearBtn" onclick="showYear('year2022')">
+📍 2022
+</button>
+
+<button class="yearBtn" onclick="showYear('year2023')">
+📍 2023
+</button>
+
+<button class="yearBtn" onclick="showYear('year2024')">
+📍 2024
+</button>
+
+<button class="yearBtn" onclick="showYear('year2025')">
+📍 2025
+</button>
+
+<button class="yearBtn" onclick="showYear('year2026')">
+📍 2026
+</button>
+
+</div>  
+  
+<div class="timelineCard yearContent"
+id="year2022"
+style="display:none;">
+
 <h2>📍 2022</h2>
 <img src="2022_1.jpeg" class="timelineImg">
 
@@ -546,8 +619,9 @@ of life.
 </p>
 </div>
 
-<div class="timelineCard">
-<h2>📍 2023</h2>
+<div class="timelineCard yearContent"
+id="year2023"
+style="display:none;">
 <img src="2022_1.jpeg" class="timelineImg">
 
 <img src="2022_2.jpeg" class="timelineImg">
@@ -559,8 +633,9 @@ Every day brought us closer and made our bond stronger.
 </p>
 </div>
 
-<div class="timelineCard">
-<h2>📍 2024</h2>
+<div class="timelineCard yearContent"
+id="year2024"
+style="display:none;">
 <img src="2022_1.jpeg" class="timelineImg">
 
 <img src="2022_2.jpeg" class="timelineImg">
@@ -573,8 +648,9 @@ happy and difficult moment.
 </p>
 </div>
 
-<div class="timelineCard">
-<h2>📍 2025</h2>
+<div class="timelineCard yearContent"
+id="year2025"
+style="display:none;">
 <img src="2022_1.jpeg" class="timelineImg">
 
 <img src="2022_2.jpeg" class="timelineImg">
@@ -587,8 +663,9 @@ to our story.
 </p>
 </div>
 
-<div class="timelineCard">
-<h2>📍 2026</h2>
+<div class="timelineCard yearContent"
+id="year2026"
+style="display:none;">
 <img src="2022_1.jpeg" class="timelineImg">
 
 <img src="2022_2.jpeg" class="timelineImg">
@@ -822,6 +899,28 @@ heart.remove();
 
 }
 
+function showYear(yearId){
+
+document
+.querySelectorAll(".yearContent")
+.forEach(card=>{
+
+card.style.display="none";
+
+});
+
+document
+.getElementById(yearId)
+.style.display="block";
+
+document
+.getElementById(yearId)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}  
+  
 </script>
 
 </body>
