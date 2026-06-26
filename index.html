@@ -1155,6 +1155,17 @@ startJourney();
 
 function startJourney(){
 
+let music = document.getElementById("bgMusic");
+music.volume = 0.25;
+music.play().catch(e => console.log(e));
+
+document.querySelector(".container").style.display="none";
+
+document.getElementById("loadingScreen").style.display="flex";
+
+...
+}  
+  
 document.querySelector(".container").style.display="none";
 
 document.getElementById("loadingScreen").style.display="flex";
@@ -1214,8 +1225,6 @@ document.getElementById("bgMusic").volume = 0.25;
 }
   
 function showTimeline(){
-
-document.getElementById("bgMusic").play();
 
 let timeline =
 document.getElementById("timelineSection");
