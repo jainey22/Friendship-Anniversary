@@ -842,8 +842,6 @@ style="display:none;">
 <h2>📍 2025</h2>  
 <img src="2022_1.jpeg" class="timelineImg">
 
-<p>
-  
 <img src="2022_2.jpeg" class="timelineImg">
 
 <p>
@@ -872,9 +870,8 @@ style="display:none;">
 <h2>📍 2026</h2>  
 <img src="2022_1.jpeg" class="timelineImg">
 
-<p>
-
 <img src="2022_2.jpeg" class="timelineImg">
+  
 <p>
   In this year, yet we made some memories, bad/good/normal.. everything was good coz I have u
 I always tried to make u happy, coz I'm a clown for u? No!! Coz ur smile is more precious than me for me, 
@@ -1155,17 +1152,10 @@ startJourney();
 
 function startJourney(){
 
-let music = document.getElementById("bgMusic");
-music.volume = 0.25;
-music.play().catch(e => console.log(e));
+let music=document.getElementById("bgMusic");
+music.volume=0.25;
+music.play().catch(e=>console.log(e));
 
-document.querySelector(".container").style.display="none";
-
-document.getElementById("loadingScreen").style.display="flex";
-
-...
-}  
-  
 document.querySelector(".container").style.display="none";
 
 document.getElementById("loadingScreen").style.display="flex";
@@ -1207,7 +1197,6 @@ clearInterval(interval);
 setTimeout(()=>{
 
 document.getElementById("loadingScreen").style.display="none";
-
 document.getElementById("heroSection").style.display="block";
 
 },1500);
